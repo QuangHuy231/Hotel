@@ -1,0 +1,356 @@
+link css
+link js
+tạo favicon
+link css icon boxicon
+link google font fontgg regular 400 medium 500 semibold 600 body-font:'Poppins', sans-serif;
+dựng root: header height, color, font-size, font-weight, z-index, font-size on mobile;
+dựng base: 
+*{
+box-sizing: border-box;
+padding: 0;
+margin:0;
+}
+html{
+scroll-behavior: smooth;
+}
+body{
+font-family: body-font;
+font-size: nomal-font-size;
+background-color: body-color;
+color: text-color;
+transition: .3s;
+}
+h1,h2,h3{
+color: text-color;
+font-weight: font-semi-bold;
+}
+ul{
+list-style: none;
+}
+a{
+text-decoration: none;
+}
+img{
+max-width: 100%;
+height: auto;
+}
+input,
+button{
+font-family: body-font;
+outline: none;
+border: none;
+}
+dựng các class:
+.container{
+max-width: 1024px;
+margin-left:1.5rem;
+margin-right: 1.5rem;
+}
+.grid{
+display: grid;
+}
+.section{
+padding: 4.5rem 0 2rem;
+}
+.section__title{
+font-size: h2-font-size;
+margin bottom: 1rem;
+}
+.section__subtitle{
+display: block;
+font-size: small-font-size;
+color:second-color;
+}
+.main{
+overflow: hidden;
+}
+xét header
+nav
+nav_logo
+nav__logo img or i
+nav__logo:hover
+đối với mobile và ipad
+menu chuyển xuống dưới ( vị trí bottom 2rem, màu nền, đổ bóng
+width, left, right, margin, padding 1.3rem 3rem, bo tròn 1.25rem, transition .4s)
+nav__list là container( canh giữa các item)
+nav__link là các item ( màu,display:flex, padding .5rem, bo tròn)
+biểu tượng thì kích thước 1.25rem;
+chữ thì ẩn
+
+home{
+    tạo background
+    lề dưới
+}
+home container{
+    tao padding treen
+    cách data vs img
+}
+home tiltle,
+home value number
+{
+    màu chữ
+}
+.home__title{
+    font-size:
+    line-height
+    marginbot 1.25
+}
+home--description{
+    màu chữ
+    marginbot 2rem
+}
+
+.home__search{
+    mauf neenf body
+    padding 35 35 35 75
+    display flex
+    align center
+    bo tronf .75
+    border 3px solid texcolor lingt
+    marbot 2rem
+}
+logo search {
+    kichs thuowcs 1.25
+    mauf first color
+}
+ input search{
+    width 90
+    nen body color
+    color text color
+    main 0 .5rem
+ }
+
+ input:placeholder{
+    color text-color light
+ }
+
+thay đổi background của nav khi scroll
+js lấy id header 
+khi mà scrollY >= 50 thì add scroll-header không thì remove
+scroll-header{
+    background 
+}
+
+4 logo:
+.logo__container{
+padding top 2rem
+tạo 2 cột 1fr
+gap 3rem 2rem
+justify-item center
+}
+.logos__img bieu tuong{
+    height 60
+    opacity .2;
+    transition .3s;
+
+}
+logos__img bieu tuong: hover{
+    opacity .7;
+}
+
+swiperjs.com
+dowload assets
+swiper-bundle-min css
+view draw dowload
+and swiper-bundle-min js dowload
+
+làm footer
+footer__container{
+    khoảng cách các dòng 2.5rem
+}
+footer logo{//logo holux
+    màu first
+    font size h3
+    font weight semi bold
+    display inline flex
+    căn giữa theo chieeuf dọc
+    khoảng cách giữa chữ và icon .25rem
+    khoảng bên dưới .75rem
+}
+
+footer__logo icon{cái icon nhà
+    font size 1.25rem
+
+}
+
+footer p, footer link{đoạn chữ và 3 cái nhỏ dưới
+    font size smallfont
+    font weight font medium
+
+}
+.footer__ content phần 4 cái to và 4 phần chứa 3 link
+,footer__links
+{
+    display grid
+}
+.footer__Content{ phần 4 cái about company sp flow
+    grid-tmeplatcolum repeat 2 maxcontent
+    gap 2.5rem 4rem
+}
+
+.footer__title{ about đồ
+    fontsize h3
+    marbot 1rem
+}
+.footer__links{ 3 cái dưới title
+    rowgap .5rem
+
+}
+
+.footer__link 1 cái link
+{
+    color text
+    transition .3s
+}
+.footer__link:hover{
+    color title
+
+}
+
+.footer__social{ phần flow
+    display flex
+    column gap 1rem
+}
+.footer__social-link{ 3 cái biểu tượng
+    fontsize 1.25rem
+    color text
+    transition .3s
+}
+
+.footer__social-link:hover{
+    color title
+
+}
+
+.footer__info, footer__privacy{ 
+    disolay flex
+}
+
+.footer__info{ 2 dòng cuối
+    paddingbot 6rem;
+    margin top 5.5rem
+    flex direction column
+    text align center
+    rowgap 1.5rem
+}
+
+.footer__copy, .footer__privacy a{ dòng đầu và 2 cái của dòng cuối
+    font size smaller
+    font weight medium
+    color text
+}
+.footer__privacy{
+    justifycontent center
+    column gap 1.25rem
+}
+
+tạo scroll active link
+ js
+ lấy các menu
+ sections = document query all section[id]
+ scrollActive = ()=>{
+ const scrollY = window.pageYOffset
+
+lấy các giá trị của section
+ sections.forEach(current=>{
+
+    sectionHeight = current.offsetHeight,
+    sectionTop = current.offsetTop - 58,
+    lấy thuộc tính id
+    sectionId = current.getAttribute('id),
+    lấy nav menu có a href
+    sectionClass = document.query('nav__menu a[href=* + sectionId + '])
+
+if(scrollY > sectionTop && sectionY <= sectionTop + sectionHeight){
+    sectionClass.classList.add('active-link)
+
+}else{
+    sectionClass.classList.remove('active-link)
+
+}
+})
+
+}
+window.addEvenlisner('scroll', scrollActive)
+
+css
+.active-link{
+    background
+    color
+}
+
+thanh scrool bar
+::webkit-scroll-bar{
+    width: .6rem;
+    border radius .5rem
+    background-color
+}
+::--webkit scrollbar thumb{
+    backgroundcolor
+    border radius
+}
+hover{
+    backgroundcolor
+}
+
+SCROLL UP
+
+html
+a.scrollup#scroll-UP
+i.chevron UP
+
+css
+.scrollup{
+    position fixed
+    right 1rem
+    bottom -30%// 8rem
+    backgroundcolor --container
+    box shadow 0 8px 12px hsla(228, 66%, 45%, .1)
+    display: inline-flex;
+    padding .35rem
+    border radius .25rem
+    color title color
+    font size 1.25rem
+    z-index: z--toolip
+    transition.3s;
+}
+
+.scrollup:hover{
+    transform tranlateY(-.25rem)
+    color first-color
+}
+
+js
+show scroll UP
+
+
+const scrollUp = () =>{
+	const scrollUp = document.getElementById('scroll-up')
+    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+						: scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+
+show-scroll{
+    bottom 8rem
+}
+
+
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    reset: true
+})
+
+sr.reveal(`.home__title , .popular__container , .subscribe__container , .footer__container`)
+sr.reveal(`.home__description , .footer__info`, {delay: 500})
+sr.reveal(`.home__search`, {delay: 600})
+sr.reveal(`.home__value`, {delay: 700})
+sr.reveal(`.home__images`, {delay: 800 , origin: 'bottom'})
+sr.reveal(`.logos__img`, {interval: 100})
+sr.reveal(`.value__images , .contact__content`, {origin: 'left'})
+sr.reveal(`.value__content , .contact__images`, {origin: 'right'})
